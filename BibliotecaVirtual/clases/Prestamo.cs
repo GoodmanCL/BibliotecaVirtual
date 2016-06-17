@@ -9,9 +9,9 @@ using System.Data.SqlClient;
 
 namespace BibliotecaVirtual.clases
 {
-    class Cliente
+    class Prestamo
     {
-        public static string tabla = "cliente";
+        public static string tabla = "prestamo";
 
         private string run;
 
@@ -58,9 +58,9 @@ namespace BibliotecaVirtual.clases
 
         
         
-        public static List<Cliente> listaClientes = new List<Cliente>();
+        public static List<Prestamo> listaClientes = new List<Prestamo>();
 
-        public Cliente(string run, string nombre, string apellido, string email, string direccion) 
+        public Prestamo(string run, string nombre, string apellido, string email, string direccion) 
         {
             this.Run = run;
             this.Nombre = nombre;
@@ -70,14 +70,14 @@ namespace BibliotecaVirtual.clases
         }
 
 
-        public static void agregarCliente(Cliente elCliente)
+        public static void agregar(Prestamo elObjeto)
         {
             Datos datos = new Datos();
-            string sql = "INSERT INTO " + tabla + " (run, nombre, apellido, email ,direccion) values('" + elCliente.Run + "','" + elCliente.Nombre + "','" + elCliente.Apellido + "','" + elCliente.Email + "','" + elCliente.Direccion + "')";
+            string sql = "INSERT INTO " + tabla + " (run, nombre, apellido, email ,direccion) values('" + elObjeto.Run + "','" + elObjeto.Nombre + "','" + elObjeto.Apellido + "','" + elObjeto.Email + "','" + elObjeto.Direccion + "')";
             datos.insertar(sql);
         }
 
-        public static Cliente buscaCliente(string run)
+        public static Prestamo buscar(string run)
         {
             Datos datos = new Datos();
             String sql = "SELECT * FROM " + tabla + " WHERE run='" + run + "'";
@@ -87,19 +87,19 @@ namespace BibliotecaVirtual.clases
                 datos.cn.Close();
                 return null;
             }
-            var unCliente = new Cliente((String)row["run"],(String)row["nombre"],(String)row["apellido"],(String)row["email"],(String)row["direccion"]);
+            var unCliente = new Prestamo((String)row["run"], (String)row["nombre"], (String)row["apellido"], (String)row["email"], (String)row["direccion"]);
             datos.cn.Close();
             return unCliente;
         }
 
-        public static void modificarCliente(Cliente elCliente)
+        public static void modificar(Prestamo elObjeto)
         {
             Datos datos = new Datos();
-            string sql = "UPDATE " + tabla + " SET nombre='" + elCliente.Nombre + "',apellido='" + elCliente.Apellido + "',email='" + elCliente.Email + "',direccion='" + elCliente.Direccion + "' WHERE run='" + elCliente.Run + "'";
+            string sql = "UPDATE " + tabla + " SET nombre='" + elObjeto.Nombre + "',apellido='" + elObjeto.Apellido + "',email='" + elObjeto.Email + "',direccion='" + elObjeto.Direccion + "' WHERE run='" + elObjeto.Run + "'";
             datos.insertar(sql);
         }
 
-        public static void eliminarCliente(String run)
+        public static void eliminar(String run)
         {
             Datos datos = new Datos();
             string sql = "DELETE FROM " + tabla + " WHERE run='" + run + "'";
@@ -107,7 +107,7 @@ namespace BibliotecaVirtual.clases
         }
 
 
-        public static DataTable listaDeClientes()
+        public static DataTable listar()
         {
             Datos datos = new Datos();
             DataTable dataTable = new DataTable();

@@ -12,38 +12,38 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using BibliotecaVirtual.clientes;
+using BibliotecaVirtual.prestamos;
 
 
 namespace BibliotecaVirtual
 {
     /// <summary>
-    /// Lógica de interacción para UC_Clientes.xaml
+    /// Lógica de interacción para UC_Prestamos.xaml
     /// </summary>
-    public partial class UC_Clientes : UserControl
+    public partial class UC_Prestamos : UserControl
     {
-        public UC_Clientes()
+        public UC_Prestamos()
         {
             InitializeComponent();
 
-            UC_ListarClientes frmLista = new UC_ListarClientes();
+            UC_PrestamosListar frmLista = new UC_PrestamosListar();
 
             pcanvas_marcoFormularios.Children.Clear();
             pcanvas_marcoFormularios.Children.Add(frmLista);
 
         }
 
-        private void nuevoCliente_click(object sender, RoutedEventArgs e)
+        private void btn_Nuevo_click(object sender, RoutedEventArgs e)
         {
-            UC_NuevoCliente frmNuevoCliente = new UC_NuevoCliente();
+            UC_PrestamosNuevo frmNuevo = new UC_PrestamosNuevo();
 
             pcanvas_marcoFormularios.Children.Clear();
-            pcanvas_marcoFormularios.Children.Add(frmNuevoCliente);
+            pcanvas_marcoFormularios.Children.Add(frmNuevo);
         }
 
-        private void listarClientes_click(object sender, RoutedEventArgs e)
+        private void btn_Listar_click(object sender, RoutedEventArgs e)
         {
-            UC_ListarClientes frmLista = new UC_ListarClientes();
+            UC_PrestamosListar frmLista = new UC_PrestamosListar();
 
             pcanvas_marcoFormularios.Children.Clear();
             pcanvas_marcoFormularios.Children.Add(frmLista);
@@ -52,16 +52,18 @@ namespace BibliotecaVirtual
         private void btn_Modificar_Click(object sender, RoutedEventArgs e)
         {
 
-            UC_EditarCliente frmEditarCliente = new UC_EditarCliente();
+            UC_PrestamosEditar frmEditar = new UC_PrestamosEditar();
             pcanvas_marcoFormularios.Children.Clear();
-            pcanvas_marcoFormularios.Children.Add(frmEditarCliente);
+            pcanvas_marcoFormularios.Children.Add(frmEditar);
         }
 
         private void btn_Eliminar_Click(object sender, RoutedEventArgs e)
         {
-            UC_EliminarCliente frmEliminarCliente = new UC_EliminarCliente();
+            UC_PrestamosEliminar frmEliminar = new UC_PrestamosEliminar();
             pcanvas_marcoFormularios.Children.Clear();
-            pcanvas_marcoFormularios.Children.Add(frmEliminarCliente);
+            pcanvas_marcoFormularios.Children.Add(frmEliminar);
         }
+
+
     }
 }

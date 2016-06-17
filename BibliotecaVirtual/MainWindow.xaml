@@ -5,35 +5,35 @@
     <Grid>
         <Expander x:Name="exp_menu" Header="Menu" Margin="10,10,10,0" VerticalAlignment="Top" IsExpanded="True" Panel.ZIndex="1" Collapsed="menu_collapsed" Expanded="menu_expanded" FontFamily="Trebuchet MS" FontSize="18" Foreground="White">
             <Grid Height="75">
-                <Button Name="btn_Home" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Height="55" Background="{x:Null}" BorderBrush="{x:Null}" Style="{StaticResource MyButton}" ToolTip="Home" Click="home_click">
+                <Button Name="btn_Home" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Height="55" Background="{x:Null}" BorderBrush="{x:Null}" ToolTip="Home" Click="home_click">
                     <DockPanel Height="55" LastChildFill="False" Width="75">
                         <DockPanel.Background>
                             <ImageBrush ImageSource="Source/Icons/mantenedor/ic_home.png" Stretch="UniformToFill"/>
                         </DockPanel.Background>
                     </DockPanel>
                 </Button>
-                <Button Name="btn_clientes" HorizontalAlignment="Left" Margin="119,10,0,0" VerticalAlignment="Top" Width="75" Height="55" Background="{x:Null}" BorderBrush="{x:Null}" Style="{StaticResource MyButton}" ToolTip="Clientes" Click="Clientes_Click">
+                <Button x:Name="btn_prestamo" HorizontalAlignment="Left" Margin="119,10,0,0" VerticalAlignment="Top" Width="75" Height="55" Background="{x:Null}" BorderBrush="{x:Null}" ToolTip="Clientes" Click="Prestamos_Click">
                     <DockPanel Height="55" LastChildFill="False" Width="75">
                         <DockPanel.Background>
-                            <ImageBrush ImageSource="Source/Icons/ic_group.png" Stretch="UniformToFill"/>
+                            <ImageBrush ImageSource="Source/Icons/mantenedor/ic_calendar.png" Stretch="UniformToFill"/>
                         </DockPanel.Background>
                     </DockPanel>
                 </Button>
-                <Button Name="btn_peliculas" HorizontalAlignment="Left" Margin="194,10,0,0" VerticalAlignment="Top" Width="75" Height="55" Background="{x:Null}" BorderBrush="{x:Null}" Style="{StaticResource MyButton}" ToolTip="Peliculas" Click="Peliculas_click">
+                <Button HorizontalAlignment="Left" Margin="194,10,0,0" VerticalAlignment="Top" Width="75" Height="55" Background="{x:Null}" BorderBrush="{x:Null}" ToolTip="Peliculas">
                     <DockPanel Height="55" LastChildFill="False" Width="75">
                         <DockPanel.Background>
                             <ImageBrush ImageSource="Source/Icons/ic_film_reel.png"/>
                         </DockPanel.Background>
                     </DockPanel>
                 </Button>
-                <Button Name="btn_arriendos" HorizontalAlignment="Left" Margin="269,10,0,0" VerticalAlignment="Top" Width="75" Height="55" Background="{x:Null}" BorderBrush="{x:Null}" Style="{StaticResource MyButton}" ToolTip="Arriendos" Click="btn_arriendos_Click">
+                <Button HorizontalAlignment="Left" Margin="269,10,0,0" VerticalAlignment="Top" Width="75" Height="55" Background="{x:Null}" BorderBrush="{x:Null}" ToolTip="Arriendos">
                     <DockPanel Height="55" LastChildFill="False" Width="75">
                         <DockPanel.Background>
                             <ImageBrush ImageSource="Source/Icons/ic_shopping_cart.png"/>
                         </DockPanel.Background>
                     </DockPanel>
                 </Button>
-                <Button Name="btn_infomes" Margin="344,10,0,0" VerticalAlignment="Top" Width="75" Height="55" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Left" Style="{StaticResource MyButton}" ToolTip="Informes" Click="btn_infomes_Click">
+                <Button Margin="344,10,0,0" VerticalAlignment="Top" Width="75" Height="55" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Left" ToolTip="Informes">
                     <DockPanel Height="55" LastChildFill="False" Width="75">
                         <DockPanel.Background>
                             <ImageBrush ImageSource="Source/Icons/ic_summary.png"/>

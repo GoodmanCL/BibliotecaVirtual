@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="BibliotecaVirtual.UC_Clientes"
+﻿<UserControl x:Class="BibliotecaVirtual.UC_Prestamos"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -9,28 +9,28 @@
             <StackPanel.Background>
                 <SolidColorBrush Color="White" Opacity="0.5"/>
             </StackPanel.Background>
-            <Button Name="btn_Insertar" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Height="55" Background="{x:Null}" BorderBrush="{x:Null}" Style="{StaticResource MyButton}" ToolTip="Nuevo" Click="nuevoCliente_click">
+            <Button Name="btn_Insertar" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Height="55" Background="{x:Null}" BorderBrush="{x:Null}" ToolTip="Nuevo" Click="btn_Nuevo_click">
                 <DockPanel Height="55" LastChildFill="False" Width="75" ToolTip="Insertar">
                     <DockPanel.Background>
                         <ImageBrush ImageSource="Source/Icons/mantenedor/ic_add.png"/>
                     </DockPanel.Background>
                 </DockPanel>
             </Button>
-            <Button Name="btn_Modificar" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Height="55" Background="{x:Null}" BorderBrush="{x:Null}" Style="{StaticResource MyButton}" ToolTip="Modificar" Click="btn_Modificar_Click">
+            <Button Name="btn_Modificar" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Height="55" Background="{x:Null}" BorderBrush="{x:Null}" ToolTip="Modificar" Click="btn_Modificar_Click">
                 <DockPanel Height="55" LastChildFill="False" Width="75">
                     <DockPanel.Background>
                         <ImageBrush ImageSource="Source/Icons/mantenedor/ic_pencil.png"/>
                     </DockPanel.Background>
                 </DockPanel>
             </Button>
-            <Button Name="btn_Eliminar" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Height="55" Background="{x:Null}" BorderBrush="{x:Null}" Style="{StaticResource MyButton}" ToolTip="Eliminar" Click="btn_Eliminar_Click">
+            <Button Name="btn_Eliminar" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Height="55" Background="{x:Null}" BorderBrush="{x:Null}" ToolTip="Eliminar" Click="btn_Eliminar_Click">
                 <DockPanel Height="55" LastChildFill="False" Width="75">
                     <DockPanel.Background>
                         <ImageBrush ImageSource="Source/Icons/mantenedor/ic_delete.png"/>
                     </DockPanel.Background>
                 </DockPanel>
             </Button>
-            <Button Name="btn_Listar" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Height="55" Background="{x:Null}" BorderBrush="{x:Null}" Style="{StaticResource MyButton}" ToolTip="Listar" Click="listarClientes_click">
+            <Button Name="btn_Listar" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Height="55" Background="{x:Null}" BorderBrush="{x:Null}" ToolTip="Listar" Click="btn_Listar_click">
                 <DockPanel Height="55" LastChildFill="False" Width="75">
                     <DockPanel.Background>
                         <ImageBrush ImageSource="Source/Icons/mantenedor/ic_task_report2.png"/>

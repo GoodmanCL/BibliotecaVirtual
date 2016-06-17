@@ -68,22 +68,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="UC_Clientes.xaml.cs">
-      <DependentUpon>UC_Clientes.xaml</DependentUpon>
+    <Compile Include="UC_Prestamos.xaml.cs">
+      <DependentUpon>UC_Prestamos.xaml</DependentUpon>
     </Compile>
-    <Page Include="clientes\UC_EditarCliente.xaml">
+    <Page Include="prestamos\UC_PrestamosEditar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="clientes\UC_EliminarCliente.xaml">
+    <Page Include="prestamos\UC_PrestamosEliminar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="clientes\UC_ListarClientes.xaml">
+    <Page Include="prestamos\UC_PrestamosListar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="clientes\UC_NuevoCliente.xaml">
+    <Page Include="prestamos\UC_PrestamosNuevo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -95,30 +95,28 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="clases\Arriendo.cs" />
-    <Compile Include="clases\Cliente.cs" />
+    <Compile Include="clases\Prestamo.cs" />
     <Compile Include="clases\Datos.cs" />
     <Compile Include="clases\Mensajes.cs" />
-    <Compile Include="clases\Pelicula.cs" />
     <Compile Include="clases\Reportes.cs" />
     <Compile Include="clases\Validaciones.cs" />
-    <Compile Include="clientes\UC_EditarCliente.xaml.cs">
-      <DependentUpon>UC_EditarCliente.xaml</DependentUpon>
+    <Compile Include="prestamos\UC_PrestamosEditar.xaml.cs">
+      <DependentUpon>UC_PrestamosEditar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="clientes\UC_EliminarCliente.xaml.cs">
-      <DependentUpon>UC_EliminarCliente.xaml</DependentUpon>
+    <Compile Include="prestamos\UC_PrestamosEliminar.xaml.cs">
+      <DependentUpon>UC_PrestamosEliminar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="clientes\UC_ListarClientes.xaml.cs">
-      <DependentUpon>UC_ListarClientes.xaml</DependentUpon>
+    <Compile Include="prestamos\UC_PrestamosListar.xaml.cs">
+      <DependentUpon>UC_PrestamosListar.xaml</DependentUpon>
     </Compile>
-    <Compile Include="clientes\UC_NuevoCliente.xaml.cs">
-      <DependentUpon>UC_NuevoCliente.xaml</DependentUpon>
+    <Compile Include="prestamos\UC_PrestamosNuevo.xaml.cs">
+      <DependentUpon>UC_PrestamosNuevo.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="UC_Clientes.xaml">
+    <Page Include="UC_Prestamos.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

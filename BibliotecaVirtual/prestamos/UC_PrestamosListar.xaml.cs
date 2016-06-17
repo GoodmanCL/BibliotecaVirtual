@@ -15,20 +15,20 @@ using System.Windows.Shapes;
 using BibliotecaVirtual.clases;
 using System.Data;
 
-namespace BibliotecaVirtual.clientes
+namespace BibliotecaVirtual.prestamos
 {
     /// <summary>
-    /// Lógica de interacción para UC_ListarClientes.xaml
+    /// Lógica de interacción para UC_PrestamosListar.xaml
     /// </summary>
-    public partial class UC_ListarClientes : UserControl
+    public partial class UC_PrestamosListar : UserControl
     {
-        public UC_ListarClientes()
+        public UC_PrestamosListar()
         {
             
             InitializeComponent();
-            
-            dataGridClientes.DataContext = Cliente.listaDeClientes();
-            dataGridClientes.IsEnabled = false;
+
+            objetoDataGrid.DataContext = Prestamo.listar();
+            objetoDataGrid.IsEnabled = false;
          
             
         }

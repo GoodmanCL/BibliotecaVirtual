@@ -13,7 +13,7 @@ namespace BibliotecaVirtual.clases
     {
 
 
-        private string cadena = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Data\DataBaseVideoClub.mdf;Integrated Security=True;Connect Timeout=30";
+        private string cadena = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Datos\Biblioteca.mdf;Integrated Security=True;Connect Timeout=30";
         public SqlConnection cn;
         public SqlCommand comando;
 

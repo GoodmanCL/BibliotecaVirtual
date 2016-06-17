@@ -25,14 +25,14 @@ namespace BibliotecaVirtual
             InitializeComponent();
         }
 
-        private void Clientes_Click(object sender, RoutedEventArgs e)
+        private void Prestamos_Click(object sender, RoutedEventArgs e)
         {
-            UC_Clientes frmClientes = new UC_Clientes();
+            UC_Prestamos frmUC = new UC_Prestamos();
 
             exp_menu.IsExpanded = false;
 
             pcanvas_marcoPrincipal.Children.Clear();
-            pcanvas_marcoPrincipal.Children.Add(frmClientes);
+            pcanvas_marcoPrincipal.Children.Add(frmUC);
         }
 
         private void menu_collapsed(object sender, RoutedEventArgs e)
@@ -67,6 +67,7 @@ namespace BibliotecaVirtual
                 e.Cancel = true; //la e captura el evento en el que está
             }
         }
+
 
 
     }

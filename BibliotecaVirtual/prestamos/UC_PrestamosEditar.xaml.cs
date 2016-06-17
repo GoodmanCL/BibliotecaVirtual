@@ -14,61 +14,85 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BibliotecaVirtual.clases;
 
-namespace BibliotecaVirtual.clientes
+namespace BibliotecaVirtual.prestamos
 {
     /// <summary>
-    /// Lógica de interacción para UC_NuevoCliente.xaml
+    /// Lógica de interacción para UC_PrestamosEditar.xaml
     /// </summary>
-    public partial class UC_NuevoCliente : UserControl
+    public partial class UC_PrestamosEditar : UserControl
     {
-        public UC_NuevoCliente()
+        public UC_PrestamosEditar()
         {
             InitializeComponent();
         }
 
         private void btn_guardar_Click(object sender, RoutedEventArgs e)
         {
-            Boolean existe = false;
+
+            
+            try
+            {
+                if (validaFormulario())
+                {
+                    Prestamo.modificar(new Prestamo(txt_run.Text, txt_nombre.Text, txt_apellido.Text, txt_email.Text, txt_direccion.Text));
+                    Validaciones.limpiaTextbox(this);
+                    txt_run.IsEnabled = true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        
+        
+        
+        private void btn_cancelar_Click(object sender, RoutedEventArgs e)
+        {
+
+            (this.Parent as Canvas).Children.Remove(this);
+
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
             Boolean buscar = Validaciones.validarRut(txt_run.Text);
             if (buscar)
             {
                 try
                 {
-                    Cliente unCliente = Cliente.buscaCliente(txt_run.Text);
-                    if (unCliente != null) {
-                        existe = true;
-                        System.Windows.MessageBox.Show(Mensajes.ERROR_CLIENTE_RUN_EXISTE);       
+
+                    Prestamo unObjeto = Prestamo.buscar(txt_run.Text);
+                    if (unObjeto != null)
+                    {
+                        txt_nombre.Text = unObjeto.Nombre;
+                        txt_apellido.Text = unObjeto.Apellido;
+                        txt_email.Text = unObjeto.Email;
+                        txt_direccion.Text = unObjeto.Direccion;
+                        txt_run.IsEnabled = false;
+                    }
+                    else
+                    {
+                        System.Windows.MessageBox.Show(Mensajes.ERROR_CLIENTE_RUN_NO_EXISTE);
                     }
                 }
                 catch (Exception ex)
                 {
                     
                 }
-                if (!existe)
-                {
-                    try
-                    {
-                        if (validaFormulario())
-                        {
-                            Cliente.agregarCliente(new Cliente(txt_run.Text, txt_nombre.Text, txt_apellido.Text, txt_email.Text, txt_direccion.Text));
-                            Validaciones.limpiaTextbox(this);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-
-                    }
-                }
             }
             else
             {
                 System.Windows.MessageBox.Show(Mensajes.ERROR_CLIENTE_RUN_INVALIDO);
-            }
-           
 
-            
-            
+            }
+
+
         }
+
 
         private Boolean validaFormulario()
         {
@@ -98,14 +122,7 @@ namespace BibliotecaVirtual.clientes
             }
             return true;
         }
-        
-        
-        private void btn_cancelar_Click(object sender, RoutedEventArgs e)
-        {
+     
 
-            (this.Parent as Canvas).Children.Remove(this);
-
-
-        }
     }
 }

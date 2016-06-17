@@ -14,90 +14,61 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using BibliotecaVirtual.clases;
 
-namespace BibliotecaVirtual.clientes
+namespace BibliotecaVirtual.prestamos
 {
     /// <summary>
-    /// Lógica de interacción para UC_EditarCliente.xaml
+    /// Lógica de interacción para UC_PrestamosNuevo.xaml
     /// </summary>
-    public partial class UC_EditarCliente : UserControl
+    public partial class UC_PrestamosNuevo : UserControl
     {
-        public UC_EditarCliente()
+        public UC_PrestamosNuevo()
         {
             InitializeComponent();
         }
 
         private void btn_guardar_Click(object sender, RoutedEventArgs e)
         {
-
-            
-            try
-            {
-                if (validaFormulario())
-                {
-                    Cliente.modificarCliente(new Cliente(txt_run.Text, txt_nombre.Text, txt_apellido.Text, txt_email.Text, txt_direccion.Text));
-                    Validaciones.limpiaTextbox(this);
-                    txt_run.IsEnabled = true;
-                    //txt_run.Clear();
-                    //txt_nombre.Clear();
-                    //txt_apellido.Clear();
-                    //txt_email.Clear();
-                    //txt_direccion.Clear();
-                }
-
-            }
-            catch (Exception ex)
-            {
-
-            }
-        }
-
-        
-        
-        
-        private void btn_cancelar_Click(object sender, RoutedEventArgs e)
-        {
-
-            (this.Parent as Canvas).Children.Remove(this);
-
-
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
+            Boolean existe = false;
             Boolean buscar = Validaciones.validarRut(txt_run.Text);
             if (buscar)
             {
                 try
                 {
-
-                    Cliente unCliente = Cliente.buscaCliente(txt_run.Text);
-                    if (unCliente != null)
-                    {
-                        txt_nombre.Text = unCliente.Nombre;
-                        txt_apellido.Text = unCliente.Apellido;
-                        txt_email.Text = unCliente.Email;
-                        txt_direccion.Text = unCliente.Direccion;
-                        txt_run.IsEnabled = false;
-                    }
-                    else
-                    {
-                        System.Windows.MessageBox.Show(Mensajes.ERROR_CLIENTE_RUN_NO_EXISTE);
+                    Prestamo unObjeto = Prestamo.buscar(txt_run.Text);
+                    if (unObjeto != null) {
+                        existe = true;
+                        System.Windows.MessageBox.Show(Mensajes.ERROR_CLIENTE_RUN_EXISTE);       
                     }
                 }
                 catch (Exception ex)
                 {
                     
                 }
+                if (!existe)
+                {
+                    try
+                    {
+                        if (validaFormulario())
+                        {
+                            Prestamo.agregar(new Prestamo(txt_run.Text, txt_nombre.Text, txt_apellido.Text, txt_email.Text, txt_direccion.Text));
+                            Validaciones.limpiaTextbox(this);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                }
             }
             else
             {
                 System.Windows.MessageBox.Show(Mensajes.ERROR_CLIENTE_RUN_INVALIDO);
-
             }
+           
 
-
+            
+            
         }
-
 
         private Boolean validaFormulario()
         {
@@ -127,7 +98,14 @@ namespace BibliotecaVirtual.clientes
             }
             return true;
         }
-     
+        
+        
+        private void btn_cancelar_Click(object sender, RoutedEventArgs e)
+        {
 
+            (this.Parent as Canvas).Children.Remove(this);
+
+
+        }
     }
 }
