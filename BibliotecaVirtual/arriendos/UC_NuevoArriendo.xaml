@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="ProyectoVideoClub.arriendos.UC_NuevoArriendo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Height="536.814" Width="590.094">
+    <Grid>
+
+        <GroupBox Header="Nuevo Arriendo" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="461" Width="570" FontFamily="Trebuchet MS" FontSize="18" FontWeight="Bold">
+            <StackPanel Margin="10,10,-2,13">
+
+                <Label Content="Cliente" FontSize="14" Foreground="White"/>
+                <DataGrid x:Name="dataGridClientes" Margin="0,0,-2,0" ColumnWidth="Auto" HorizontalContentAlignment="Stretch" AutoGenerateColumns="True" ItemsSource="{Binding}" Height="95" SelectionMode="Single" FontSize="14" FontWeight="Normal"/>
+                <Label Content="Pelicula" FontSize="14" Foreground="White"/>
+                <DataGrid x:Name="dataGridPeliculas" Margin="0,0,-2,0" ColumnWidth="Auto" HorizontalContentAlignment="Stretch" AutoGenerateColumns="True" ItemsSource="{Binding}" Height="95" SelectionChanged="calculaValor" IsSynchronizedWithCurrentItem="True" SelectionMode="Single" FontSize="12" FontWeight="Normal"/>
+                <Label Content="Fecha" FontSize="14" Foreground="White"/>
+                <TextBox x:Name="txt_fecha" Height="23" TextWrapping="Wrap" Margin="0,0,424,0" FontSize="14" FontWeight="Normal"/>
+                <Label Content="Dias" FontSize="14" Foreground="White"/>
+                <ComboBox x:Name="cbox_dias" Margin="0,0,424,0" SelectionChanged="calculaValor" FontSize="14" FontWeight="Normal">
+                    <ComboBoxItem Content="-Elija los días-"/>
+                    <ComboBoxItem Content="1 Día"/>
+                    <ComboBoxItem Content="2 Días"/>
+                    <ComboBoxItem Content="3 Días"/>
+                </ComboBox>
+                <Label Content="Valor Arriendo" FontSize="14" Foreground="White"/>
+                <TextBox x:Name="txt_valorArriendo" Height="23" TextWrapping="Wrap" Margin="0,0,424,0" IsEnabled="False" Text="0" FontSize="14" FontWeight="Normal"/>
+            </StackPanel>
+        </GroupBox>
+        <Button Name="btn_guardar" HorizontalAlignment="Left" Margin="505,476,0,0" VerticalAlignment="Top" Width="75" Height="55" Background="{x:Null}" BorderBrush="{x:Null}" Style="{StaticResource MyButton}" ToolTip="Guardar" Click="btn_guardar_Click">
+            <DockPanel Height="55" LastChildFill="False" Width="75">
+                <DockPanel.Background>
+                    <ImageBrush ImageSource="/ProyectoVideoClub;component/Source/Icons/mantenedor/ic_checkmark.png"/>
+                </DockPanel.Background>
+            </DockPanel>
+        </Button>
+        <Button Name="btn_cancelar" HorizontalAlignment="Left" Margin="430,476,0,0" VerticalAlignment="Top" Width="75" Height="55" Background="{x:Null}" BorderBrush="{x:Null}" Style="{StaticResource MyButton}" ToolTip="Limpiar" Click="btn_cancelar_Click">
+            <DockPanel Height="55" LastChildFill="False" Width="75">
+                <DockPanel.Background>
+                    <ImageBrush ImageSource="/ProyectoVideoClub;component/Source/Icons/mantenedor/ic_cross.png"/>
+                </DockPanel.Background>
+            </DockPanel>
+        </Button>
+    </Grid>
+</UserControl>

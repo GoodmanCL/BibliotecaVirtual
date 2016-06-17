@@ -1,0 +1,50 @@
+﻿<Window x:Class="BibliotecaVirtual.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Biblioteca Virtual" Height="535.075" Width="1077.239" WindowState="Maximized" Closing="Window_Closing" Foreground="#FFFDFDFD" Background="LightGray">
+    <Grid>
+        <Expander x:Name="exp_menu" Header="Menu" Margin="10,10,10,0" VerticalAlignment="Top" IsExpanded="True" Panel.ZIndex="1" Collapsed="menu_collapsed" Expanded="menu_expanded" FontFamily="Trebuchet MS" FontSize="18" Foreground="White">
+            <Grid Height="75">
+                <Button Name="btn_Home" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Height="55" Background="{x:Null}" BorderBrush="{x:Null}" Style="{StaticResource MyButton}" ToolTip="Home" Click="home_click">
+                    <DockPanel Height="55" LastChildFill="False" Width="75">
+                        <DockPanel.Background>
+                            <ImageBrush ImageSource="Source/Icons/mantenedor/ic_home.png" Stretch="UniformToFill"/>
+                        </DockPanel.Background>
+                    </DockPanel>
+                </Button>
+                <Button Name="btn_clientes" HorizontalAlignment="Left" Margin="119,10,0,0" VerticalAlignment="Top" Width="75" Height="55" Background="{x:Null}" BorderBrush="{x:Null}" Style="{StaticResource MyButton}" ToolTip="Clientes" Click="Clientes_Click">
+                    <DockPanel Height="55" LastChildFill="False" Width="75">
+                        <DockPanel.Background>
+                            <ImageBrush ImageSource="Source/Icons/ic_group.png" Stretch="UniformToFill"/>
+                        </DockPanel.Background>
+                    </DockPanel>
+                </Button>
+                <Button Name="btn_peliculas" HorizontalAlignment="Left" Margin="194,10,0,0" VerticalAlignment="Top" Width="75" Height="55" Background="{x:Null}" BorderBrush="{x:Null}" Style="{StaticResource MyButton}" ToolTip="Peliculas" Click="Peliculas_click">
+                    <DockPanel Height="55" LastChildFill="False" Width="75">
+                        <DockPanel.Background>
+                            <ImageBrush ImageSource="Source/Icons/ic_film_reel.png"/>
+                        </DockPanel.Background>
+                    </DockPanel>
+                </Button>
+                <Button Name="btn_arriendos" HorizontalAlignment="Left" Margin="269,10,0,0" VerticalAlignment="Top" Width="75" Height="55" Background="{x:Null}" BorderBrush="{x:Null}" Style="{StaticResource MyButton}" ToolTip="Arriendos" Click="btn_arriendos_Click">
+                    <DockPanel Height="55" LastChildFill="False" Width="75">
+                        <DockPanel.Background>
+                            <ImageBrush ImageSource="Source/Icons/ic_shopping_cart.png"/>
+                        </DockPanel.Background>
+                    </DockPanel>
+                </Button>
+                <Button Name="btn_infomes" Margin="344,10,0,0" VerticalAlignment="Top" Width="75" Height="55" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Left" Style="{StaticResource MyButton}" ToolTip="Informes" Click="btn_infomes_Click">
+                    <DockPanel Height="55" LastChildFill="False" Width="75">
+                        <DockPanel.Background>
+                            <ImageBrush ImageSource="Source/Icons/ic_summary.png"/>
+                        </DockPanel.Background>
+                    </DockPanel>
+                </Button>
+
+
+            </Grid>
+        </Expander>
+        <Canvas x:Name="pcanvas_marcoPrincipal" Margin="10,120,10,13"/>
+
+    </Grid>
+</Window>
