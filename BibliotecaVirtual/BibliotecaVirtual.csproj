@@ -68,6 +68,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="clases\Alumno.cs" />
+    <Compile Include="clases\Bibliotecario.cs" />
+    <Compile Include="clases\RegistroMaterial.cs" />
+    <Compile Include="clases\UsuarioEspecial.cs" />
     <Compile Include="UC_Prestamos.xaml.cs">
       <DependentUpon>UC_Prestamos.xaml</DependentUpon>
     </Compile>
