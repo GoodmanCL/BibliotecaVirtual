@@ -3,11 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" Height="401.887" Width="590.094">
-    <Grid>
+             mc:Ignorable="d" Height="485.994" Width="661.37">
+    <Grid Margin="10">
 
-        <GroupBox Header="Nuevo Prestamo" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="311" Width="570" FontFamily="Trebuchet MS" FontSize="18">
+        <GroupBox Header="Nuevo Prestamo" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="364" Width="621" FontFamily="Trebuchet MS" FontSize="18">
             <StackPanel Margin="10,10,-2,13">
+
+                <Label Content="ID Bibliotecario:" FontSize="14"/>
+                <TextBox x:Name="txt_idBibliotecario" Height="23" TextWrapping="Wrap"/>
+                <Label Content="ID Usuario:" FontSize="14"/>
+                <TextBox x:Name="txt_idUsuario" Height="23" TextWrapping="Wrap"/>
 
                 <Label Content="Fecha Prestamo:" FontFamily="Trebuchet MS" FontSize="14" Background="{x:Null}" Foreground="Black"/>
                 <TextBox x:Name="txt_fechaPrestamo" Height="23" TextWrapping="Wrap" MaxLength="10" FontFamily="Trebuchet MS" FontSize="14"/>
@@ -19,15 +24,15 @@
                 <TextBox x:Name="txt_estadoPrestamo" Height="23" TextWrapping="Wrap" MaxLength="50" FontFamily="Trebuchet MS" FontSize="14"/>
             </StackPanel>
         </GroupBox>
-        <Button Name="btn_guardar" HorizontalAlignment="Left" Margin="505,326,0,0" VerticalAlignment="Top" Width="75" Height="55" Background="{x:Null}" BorderBrush="{x:Null}" ToolTip="Guardar" Click="btn_guardar_Click">
-            <DockPanel Height="55" LastChildFill="False" Width="75">
+        <Button Name="btn_guardar" HorizontalAlignment="Left" Margin="541,379,0,0" VerticalAlignment="Top" Width="75" Height="55" Background="{x:Null}" BorderBrush="{x:Null}" ToolTip="Guardar" Click="btn_guardar_Click">
+            <DockPanel LastChildFill="False" Height="55" Width="75">
                 <DockPanel.Background>
                     <ImageBrush ImageSource="/BibliotecaVirtual;component/Source/Icons/mantenedor/ic_checkmark.png"/>
                 </DockPanel.Background>
             </DockPanel>
         </Button>
-        <Button Name="btn_cancelar" HorizontalAlignment="Left" Margin="430,326,0,0" VerticalAlignment="Top" Width="75" Height="55" Background="{x:Null}" BorderBrush="{x:Null}" ToolTip="Limpiar" Click="btn_cancelar_Click">
-            <DockPanel Height="55" LastChildFill="False" Width="75">
+        <Button Name="btn_cancelar" HorizontalAlignment="Left" Margin="436,379,0,0" VerticalAlignment="Top" Width="75" Height="55" Background="{x:Null}" BorderBrush="{x:Null}" ToolTip="Limpiar" Click="btn_cancelar_Click" RenderTransformOrigin="0.824,1.278">
+            <DockPanel LastChildFill="False" RenderTransformOrigin="0.569,2.563" Height="55" Width="75">
                 <DockPanel.Background>
                     <ImageBrush ImageSource="/BibliotecaVirtual;component/Source/Icons/mantenedor/ic_cross.png"/>
                 </DockPanel.Background>

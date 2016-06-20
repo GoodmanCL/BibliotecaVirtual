@@ -107,7 +107,7 @@ namespace BibliotecaVirtual.clases
                 return null;
             }
 
-            var unPrestamo = new Prestamo((int)row["id"], (String)row["fechaPrestamo"], (String)row["fechaDevolucion"], (String)row["fechaRealDevolucion"], (String)row["estadoPrestamo"]);
+            var unPrestamo = new Prestamo( (int)row["idBibliotecario"], (int)row ["idUsuario"], (int)row["id"], (String)row["fechaPrestamo"], (String)row["fechaDevolucion"], (String)row["fechaRealDevolucion"], (String)row["estadoPrestamo"]);
             datos.cn.Close();
             return unPrestamo;
 
