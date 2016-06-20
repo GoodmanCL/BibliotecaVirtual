@@ -69,7 +69,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="clases\Alumno.cs" />
+    <Compile Include="clases\Atraso.cs" />
+    <Compile Include="clases\AtrasoEspecial.cs" />
+    <Compile Include="clases\AtrasoNormal.cs" />
     <Compile Include="clases\Bibliotecario.cs" />
+    <Compile Include="clases\PrestamoEspecial.cs" />
+    <Compile Include="clases\PrestamoNormal.cs" />
     <Compile Include="clases\RegistroMaterial.cs" />
     <Compile Include="clases\UsuarioEspecial.cs" />
     <Compile Include="UC_Prestamos.xaml.cs">

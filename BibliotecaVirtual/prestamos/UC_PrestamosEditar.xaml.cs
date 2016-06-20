@@ -34,9 +34,7 @@ namespace BibliotecaVirtual.prestamos
             {
                 if (validaFormulario())
                 {
-                    Prestamo.modificar(new Prestamo(txt_run.Text, txt_nombre.Text, txt_apellido.Text, txt_email.Text, txt_direccion.Text));
-                    Validaciones.limpiaTextbox(this);
-                    txt_run.IsEnabled = true;
+
                 }
 
             }
@@ -59,34 +57,21 @@ namespace BibliotecaVirtual.prestamos
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Boolean buscar = Validaciones.validarRut(txt_run.Text);
-            if (buscar)
+            try
             {
-                try
+
+                Prestamo unObjeto = Prestamo.buscar(Convert.ToInt32(txt_id.Text));
+                if (unObjeto != null)
                 {
 
-                    Prestamo unObjeto = Prestamo.buscar(txt_run.Text);
-                    if (unObjeto != null)
-                    {
-                        txt_nombre.Text = unObjeto.Nombre;
-                        txt_apellido.Text = unObjeto.Apellido;
-                        txt_email.Text = unObjeto.Email;
-                        txt_direccion.Text = unObjeto.Direccion;
-                        txt_run.IsEnabled = false;
-                    }
-                    else
-                    {
-                        System.Windows.MessageBox.Show(Mensajes.ERROR_CLIENTE_RUN_NO_EXISTE);
-                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    
+                    System.Windows.MessageBox.Show(Mensajes.ERROR_CLIENTE_RUN_NO_EXISTE);
                 }
             }
-            else
+            catch (Exception ex)
             {
-                System.Windows.MessageBox.Show(Mensajes.ERROR_CLIENTE_RUN_INVALIDO);
 
             }
 
@@ -96,30 +81,30 @@ namespace BibliotecaVirtual.prestamos
 
         private Boolean validaFormulario()
         {
-            if (txt_nombre.Text == "")
-            {
-                txt_nombre.Focus();
-                System.Windows.MessageBox.Show(Mensajes.ERROR_CLIENTE_NOMBRE_VACIO);
-                return false;
-            }
-            if (txt_apellido.Text == "")
-            {
-                txt_apellido.Focus();
-                System.Windows.MessageBox.Show(Mensajes.ERROR_CLIENTE_APELLIDO_VACIO);
-                return false;
-            }
-            if (txt_email.Text == "")
-            {
-                txt_email.Focus();
-                System.Windows.MessageBox.Show(Mensajes.ERROR_CLIENTE_EMAIL_VACIO);
-                return false;
-            }
-            if (txt_direccion.Text == "")
-            {
-                txt_direccion.Focus();
-                System.Windows.MessageBox.Show(Mensajes.ERROR_CLIENTE_DIRECCION_VACIO);
-                return false;
-            }
+            //if (txt_nombre.Text == "")
+            //{
+            //    txt_nombre.Focus();
+            //    System.Windows.MessageBox.Show(Mensajes.ERROR_CLIENTE_NOMBRE_VACIO);
+            //    return false;
+            //}
+            //if (txt_apellido.Text == "")
+            //{
+            //    txt_apellido.Focus();
+            //    System.Windows.MessageBox.Show(Mensajes.ERROR_CLIENTE_APELLIDO_VACIO);
+            //    return false;
+            //}
+            //if (txt_email.Text == "")
+            //{
+            //    txt_email.Focus();
+            //    System.Windows.MessageBox.Show(Mensajes.ERROR_CLIENTE_EMAIL_VACIO);
+            //    return false;
+            //}
+            //if (txt_direccion.Text == "")
+            //{
+            //    txt_direccion.Focus();
+            //    System.Windows.MessageBox.Show(Mensajes.ERROR_CLIENTE_DIRECCION_VACIO);
+            //    return false;
+            //}
             return true;
         }
      

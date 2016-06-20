@@ -9,16 +9,14 @@
         <GroupBox Header="Nuevo Prestamo" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="311" Width="570" FontFamily="Trebuchet MS" FontSize="18">
             <StackPanel Margin="10,10,-2,13">
 
-                <Label Content="R.U.N.:" FontFamily="Trebuchet MS" FontSize="14" FontWeight="Bold" Background="{x:Null}" Foreground="White"/>
-                <TextBox x:Name="txt_run" Height="23" TextWrapping="Wrap" MaxLength="10" FontFamily="Trebuchet MS" FontSize="14"/>
-                <Label x:Name="___Label___Nombre___" Content="Nombre:" FontFamily="Trebuchet MS" FontSize="14" FontWeight="Bold" Background="{x:Null}" Foreground="White"/>
-                <TextBox x:Name="txt_nombre" Height="23" TextWrapping="Wrap" MaxLength="50" FontFamily="Trebuchet MS" FontSize="14"/>
-                <Label Content="Apellido:" FontFamily="Trebuchet MS" FontSize="14" FontWeight="Bold" Background="{x:Null}" Foreground="White"/>
-                <TextBox x:Name="txt_apellido" Height="23" TextWrapping="Wrap" MaxLength="50" MaxLines="2147483646" FontFamily="Trebuchet MS" FontSize="14"/>
-                <Label Content="Email :" FontFamily="Trebuchet MS" FontSize="14" FontWeight="Bold" Background="{x:Null}" Foreground="White"/>
-                <TextBox x:Name="txt_email" Height="23" TextWrapping="Wrap" MaxLength="50" FontFamily="Trebuchet MS" FontSize="14"/>
-                <Label Content="Dirección:" FontFamily="Trebuchet MS" FontSize="14" FontWeight="Bold" Background="{x:Null}" Foreground="White"/>
-                <TextBox x:Name="txt_direccion" Height="23" TextWrapping="Wrap" MaxLength="50" FontFamily="Trebuchet MS" FontSize="14"/>
+                <Label Content="Fecha Prestamo:" FontFamily="Trebuchet MS" FontSize="14" Background="{x:Null}" Foreground="Black"/>
+                <TextBox x:Name="txt_fechaPrestamo" Height="23" TextWrapping="Wrap" MaxLength="10" FontFamily="Trebuchet MS" FontSize="14"/>
+                <Label x:Name="___Label___Nombre___" Content="Fecha Devolución:" FontFamily="Trebuchet MS" FontSize="14" Background="{x:Null}" Foreground="Black"/>
+                <TextBox x:Name="txt_fechaDevolucion" Height="23" TextWrapping="Wrap" MaxLength="50" FontFamily="Trebuchet MS" FontSize="14"/>
+                <Label Content="Fecha Real Devolución:" FontFamily="Trebuchet MS" FontSize="14" Background="{x:Null}" Foreground="Black"/>
+                <TextBox x:Name="txt_fechaRealDevolucion" Height="23" TextWrapping="Wrap" MaxLength="50" MaxLines="2147483646" FontFamily="Trebuchet MS" FontSize="14"/>
+                <Label Content="Estado Prestamo:" FontFamily="Trebuchet MS" FontSize="14" Background="{x:Null}" Foreground="Black"/>
+                <TextBox x:Name="txt_estadoPrestamo" Height="23" TextWrapping="Wrap" MaxLength="50" FontFamily="Trebuchet MS" FontSize="14"/>
             </StackPanel>
         </GroupBox>
         <Button Name="btn_guardar" HorizontalAlignment="Left" Margin="505,326,0,0" VerticalAlignment="Top" Width="75" Height="55" Background="{x:Null}" BorderBrush="{x:Null}" ToolTip="Guardar" Click="btn_guardar_Click">

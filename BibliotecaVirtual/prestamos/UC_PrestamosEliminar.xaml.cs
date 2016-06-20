@@ -41,7 +41,7 @@ namespace BibliotecaVirtual.prestamos
                         {
                             return;
                         }
-                        Prestamo.eliminar(txt_run.Text);
+                        //Prestamo.eliminar(txt_run.Text);
 
                         txt_run.Clear();
                         txt_nombre.Clear();
@@ -83,12 +83,6 @@ namespace BibliotecaVirtual.prestamos
             try
             {
 
-                Prestamo unObjeto = Prestamo.buscar(txt_run.Text);
-
-                txt_nombre.Text = unObjeto.Nombre;
-                txt_apellido.Text = unObjeto.Apellido;
-                txt_email.Text = unObjeto.Email;
-                txt_direccion.Text = unObjeto.Direccion;
             }
             catch (Exception ex)
             {

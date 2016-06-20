@@ -7,20 +7,20 @@
     <Grid>
         <GroupBox Header="Editar Prestamo" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="311" Width="570" FontFamily="Trebuchet MS" FontSize="18">
             <StackPanel Margin="10,10,-2,13">
-                <Label Content="Run:" FontSize="14" FontWeight="Bold" Foreground="White"/>
+                <Label Content="Id:" FontSize="14" Foreground="Black"/>
                 <Grid>
 
-                    <TextBox x:Name="txt_run" Height="23" TextWrapping="Wrap" Margin="0,0,212,0"/>
+                    <TextBox x:Name="txt_id" Height="23" TextWrapping="Wrap" Margin="0,0,212,0"/>
                     <Button Content="Buscar" Margin="359,0,10,0" Click="Button_Click"/>
                 </Grid>
-                <Label Content="Nombre:" FontSize="14" FontWeight="Bold" Foreground="White"/>
-                <TextBox x:Name="txt_nombre" Height="23" TextWrapping="Wrap" FontSize="14"/>
-                <Label Content="Apellido:" FontSize="14" FontWeight="Bold" Foreground="White"/>
-                <TextBox x:Name="txt_apellido" Height="23" TextWrapping="Wrap" FontSize="14"/>
-                <Label Content="Email:" FontSize="14" FontWeight="Bold" Foreground="White"/>
-                <TextBox x:Name="txt_email" Height="23" TextWrapping="Wrap" FontSize="14"/>
-                <Label Content="Dirección:" FontSize="14" FontWeight="Bold" Foreground="White"/>
-                <TextBox x:Name="txt_direccion" Height="23" TextWrapping="Wrap" FontSize="14"/>
+                <Label Content="Fecha de Préstamo:" FontSize="14" Foreground="Black"/>
+                <TextBox x:Name="txt_fechaPrestamo" Height="23" TextWrapping="Wrap" FontSize="14"/>
+                <Label Content="Fecha Devolución:" FontSize="14" Foreground="Black"/>
+                <TextBox x:Name="txt_fechaDevolucion" Height="23" TextWrapping="Wrap" FontSize="14"/>
+                <Label Content="Fecha Real de DEvolución:" FontSize="14" Foreground="Black"/>
+                <TextBox x:Name="txt_fechaRealDevolucion" Height="23" TextWrapping="Wrap" FontSize="14"/>
+                <Label Content="Estado:" FontSize="14" Foreground="Black"/>
+                <TextBox x:Name="txt_estadoPrestamo" Height="23" TextWrapping="Wrap" FontSize="14"/>
                 <Label x:Name="lbl_error" Content="" Foreground="Red"/>
             </StackPanel>
         </GroupBox>

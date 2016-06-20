@@ -11,9 +11,19 @@ namespace BibliotecaVirtual.clases
 {
     class Prestamo
     {
+        public static string tabla = "prestamo";
 
-   
-        private string fechaPrestamo;         //definicion de atributos de clase prestamo.
+        //definicion de atributos de clase prestamo.
+
+        private int id;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        private string fechaPrestamo;     
 
         public string FechaPrestamo
         {
@@ -48,8 +58,9 @@ namespace BibliotecaVirtual.clases
         }
 
 
-        public Prestamo(string fechaPrestamo, string fechaDevolucion, string fechaRealDevolucion, string estadoPrestamo)  //constructor de clase prestamo
+        public Prestamo(int id, string fechaPrestamo, string fechaDevolucion, string fechaRealDevolucion, string estadoPrestamo)  //constructor de clase prestamo
         {
+            this.Id = id;
             this.FechaPrestamo = fechaPrestamo;
             this.FechaDevolucion = fechaDevolucion;
             this.FechaRealDevolucion = fechaRealDevolucion;
@@ -66,11 +77,49 @@ namespace BibliotecaVirtual.clases
         public static void setDevolucion()   //metodo
         {
 
+        }
 
+
+        public static Prestamo buscar(int id)
+        {
+            Datos datos = new Datos();
+            String sql = "SELECT * FROM " + tabla + " WHERE id='" + id + "'";
+            SqlDataReader row = datos.buscar(sql);
+            if (!row.Read())
+            {
+                datos.cn.Close();
+                return null;
+            }
+
+            var unPrestamo = new Prestamo((int)row["id"], (String)row["fechaPrestamo"], (String)row["fechaDevolucion"], (String)row["fechaRealDevolucion"], (String)row["estadoPrestamo"]);
+            datos.cn.Close();
+            return unPrestamo;
 
         }
 
-       
+        public static void agregar(Prestamo elPrestamo)
+        {
+            Datos datos = new Datos();
+
+            string sql = "INSERT INTO " + tabla + " (fechaPrestamo, fechaDevolucion, fechaRealDevolucion, estadoPrestamo) values('" + elPrestamo.FechaPrestamo + "','" + elPrestamo.FechaDevolucion+ "','" + elPrestamo.FechaRealDevolucion+ "','" + elPrestamo.EstadoPrestamo + "')";
+            datos.insertar(sql);
+        }
+
+        public static void modificar(Prestamo elPrestamo)
+        {
+            Datos datos = new Datos();
+            string sql = "UPDATE " + tabla + " SET fechaPrestamo='" + elPrestamo.FechaPrestamo + "',apellidfechaDevolucion" + elPrestamo.FechaDevolucion + "',fechaRealDevolucion='" + elPrestamo.FechaRealDevolucion + "',estadoPrestamo='" + elPrestamo.EstadoPrestamo + "' WHERE id='" + elPrestamo.Id + "'";
+            datos.insertar(sql);
+        }
+
+        public static DataTable listar()
+        {
+            Datos datos = new Datos();
+
+            DataTable dataTable = new DataTable();
+            dataTable = datos.consultaTabla(tabla);
+            return dataTable;
+        }
 
     }
 }
