@@ -23,6 +23,21 @@ namespace BibliotecaVirtual.clases
             set { id = value; }
         }
 
+        private int idBibliotecario;
+
+        public int IdBibliotecario
+        {
+            get { return idBibliotecario; }
+            set { idBibliotecario = value; }
+        }
+        private int idUsuario;
+
+        public int IdUsuario
+        {
+            get { return idUsuario; }
+            set { idUsuario = value; }
+        }
+
         private string fechaPrestamo;     
 
         public string FechaPrestamo
@@ -58,10 +73,11 @@ namespace BibliotecaVirtual.clases
         }
 
 
-        public Prestamo(int id, string fechaPrestamo, string fechaDevolucion, string fechaRealDevolucion, string estadoPrestamo)  //constructor de clase prestamo
+        public Prestamo(int id, int idBibliotecario, int idUsuario, string fechaPrestamo, string fechaDevolucion, string fechaRealDevolucion, string estadoPrestamo)  //constructor de clase prestamo
         {
             this.Id = id;
-            this.FechaPrestamo = fechaPrestamo;
+            this.IdBibliotecario = idBibliotecario;
+            this.IdUsuario = idUsuario;            this.FechaPrestamo = fechaPrestamo;
             this.FechaDevolucion = fechaDevolucion;
             this.FechaRealDevolucion = fechaRealDevolucion;
             this.EstadoPrestamo = estadoPrestamo;
