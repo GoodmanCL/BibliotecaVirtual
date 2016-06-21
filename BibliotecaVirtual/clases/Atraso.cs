@@ -62,6 +62,21 @@ namespace BibliotecaVirtual.clases
 
         }
 
+        public static Atraso busca(string buscarID)
+        {
+            string con = "select * from Cliente where id='" + buscarID +"'";
+
+            Datos datos = new Datos();
+
+            Atraso unAtraso = datos.buscar(con);
+
+            return unAtraso;
+
+        }
+
+
+
+
 
     }
 }
