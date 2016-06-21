@@ -55,6 +55,12 @@ namespace BibliotecaVirtual.clases
             return validacion;
         }
 
+
+        public static int diferenciaDias(String fechaInicial, String fechaFinal)
+        {
+
+            return 4;
+        }
             
 
 

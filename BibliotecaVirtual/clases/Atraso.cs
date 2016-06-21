@@ -9,6 +9,7 @@ namespace BibliotecaVirtual.clases
     class Atraso
     {
         public static string tabla = "atraso";
+        public static int factorPenalizacion = 5;
 
 
         private string sancion;
