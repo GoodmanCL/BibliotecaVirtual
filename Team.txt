@@ -1,0 +1,20 @@
+Prestamo
+
+Listado y Nuevo
+
+Leo
+Jonathan
+Claudia
+Alejandro
+
+Buscar Prestamo y Gatillart Atraso
+
+Dario
+Erick 
+Kako
+
+Logica externa mas interface
+
+Francisco
+Vero
+Cristian
