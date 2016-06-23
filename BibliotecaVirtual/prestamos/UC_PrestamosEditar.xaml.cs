@@ -28,21 +28,40 @@ namespace BibliotecaVirtual.prestamos
 
         private void btn_guardar_Click(object sender, RoutedEventArgs e)
         {
-
-            
-            try
+            if (txt_id.Text.Length == 0)
             {
-                if (validaFormulario())
-                {
+                MessageBox.Show("No ha ingresado Ningun ID");
+
+            }
+            else
+            {
+                
+                    try
+                    {
+                        Atraso unAtraso = Atraso.busca(txt_id.Text);
+
+                        txt_id.IsEnabled = false;
+                        txt_fechaPrestamo.IsEnabled = false;
+                        txt_fechaDevolucion.IsEnabled = false;
+                        txt_fechaRealDevolucion.IsEnabled = true;
+                        txt_estadoPrestamo.IsEnabled = false;
+                       
+                    }
+                    catch (Exception error)
+                    {
+                        MessageBox.Show("Rut no Encontrado");
+                        txt_id.Clear();
+                    }
 
                 }
-
             }
-            catch (Exception ex)
-            {
 
-            }
-        }
+           
+        
+
+            
+            
+        
 
         
         

@@ -4,12 +4,15 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Sql;
+using System.Data.SqlClient;
 
 namespace BibliotecaVirtual.clases
 {
     class atraso
     {
         public static string tabla = "atraso";
+        public static int factorPenalizacion = 5;
 
 
         private int id;
@@ -74,6 +77,7 @@ namespace BibliotecaVirtual.clases
 
         }
 
+<<<<<<< HEAD
         // incio consultas sql
 
         public static void agregar(atraso elAtraso)
@@ -103,6 +107,21 @@ namespace BibliotecaVirtual.clases
             DataTable dataTable = new DataTable();
             dataTable = datos.consultaTabla(tabla);
             return dataTable;
+=======
+        public static Atraso busca(string buscarID)
+        {
+            string con = "select * from Cliente where id='" + buscarID +"'";
+
+            Datos datos = new Datos();
+
+            SqlDataReader row = datos.buscar(con);
+
+
+            var unAtraso = new Atraso((String)row["sancion"], (String)row["estado"]);
+
+            return unAtraso;
+
+>>>>>>> origin/master
         }
 
 
