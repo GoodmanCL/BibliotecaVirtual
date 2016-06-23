@@ -29,8 +29,9 @@ namespace BibliotecaVirtual
             UC_PrestamosListar frmLista = new UC_PrestamosListar();
 
             pcanvas_marcoFormularios.Children.Clear();
-            pcanvas_marcoFormularios.Children.Add(frmLista);
+           pcanvas_marcoFormularios.Children.Add(frmLista);
 
+          
         }
 
         private void btn_Nuevo_click(object sender, RoutedEventArgs e)
@@ -62,6 +63,20 @@ namespace BibliotecaVirtual
             UC_PrestamosEliminar frmEliminar = new UC_PrestamosEliminar();
             pcanvas_marcoFormularios.Children.Clear();
             pcanvas_marcoFormularios.Children.Add(frmEliminar);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            UC_Atraso fmrIngresoAtraso = new UC_Atraso();
+            pcanvas_marcoFormularios.Children.Clear();
+            pcanvas_marcoFormularios.Children.Add(fmrIngresoAtraso);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            UC_listarAtraso fmrListarAtraso = new UC_listarAtraso();
+            pcanvas_marcoFormularios.Children.Clear();
+            pcanvas_marcoFormularios.Children.Add(fmrListarAtraso);
         }
 
 

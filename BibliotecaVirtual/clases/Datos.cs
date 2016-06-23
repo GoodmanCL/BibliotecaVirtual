@@ -108,6 +108,40 @@ namespace BibliotecaVirtual.clases
             return reader;
         }
 
+        public Prestamo buscarPrestamo(string sql)
+        {
+
+            comando = new SqlCommand(sql, cn);
+            cn.Open();
+            SqlDataReader reader = comando.ExecuteReader();
+            reader.Read();
+            Prestamo unPrestamo = new Prestamo(reader.GetInt16(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4));
+            reader.Close();
+            return unPrestamo;
+        }
+
+        public bool existe(string Id)
+        {
+            cn.Open();
+            string query = "SELECT COUNT(*) FROM prestamo WHERE Id='" + Id + "'";
+            SqlCommand cmd = new SqlCommand(query, cn);
+            cmd.Parameters.AddWithValue("Id", Id);
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+            cn.Close();
+            if (count == 0)
+            {
+
+                return false;
+            }
+            else
+            {
+
+                return true;
+            }
+        }
+
+
+
 
         public SqlDataReader consulta(String sql)
         {
