@@ -38,7 +38,7 @@ namespace BibliotecaVirtual.prestamos
                 
                     try
                     {
-                        Atraso unAtraso = Atraso.buscar(txt_id.Text);
+                        Atraso unAtraso = Atraso.busca(txt_id.Text);
 
                         txt_id.IsEnabled = false;
                         txt_fechaPrestamo.IsEnabled = false;

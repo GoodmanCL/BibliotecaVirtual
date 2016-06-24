@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Sql;
+using System.Data.SqlClient;
 
 namespace BibliotecaVirtual.clases
 {
@@ -68,7 +70,10 @@ namespace BibliotecaVirtual.clases
 
             Datos datos = new Datos();
 
-            Atraso unAtraso = datos.buscar(con);
+            SqlDataReader row = datos.buscar(con);
+
+
+            var unAtraso = new Atraso((String)row["sancion"], (String)row["estado"]);
 
             return unAtraso;
 
