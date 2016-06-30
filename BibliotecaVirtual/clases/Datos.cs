@@ -108,17 +108,7 @@ namespace BibliotecaVirtual.clases
             return reader;
         }
 
-        public Prestamo buscarPrestamo(string sql)
-        {
 
-            comando = new SqlCommand(sql, cn);
-            cn.Open();
-            SqlDataReader reader = comando.ExecuteReader();
-            reader.Read();
-            Prestamo unPrestamo = new Prestamo(reader.GetInt16(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4));
-            reader.Close();
-            return unPrestamo;
-        }
 
         public bool existe(string Id)
         {

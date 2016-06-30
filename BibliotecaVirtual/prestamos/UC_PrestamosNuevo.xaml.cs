@@ -32,11 +32,9 @@ namespace BibliotecaVirtual.prestamos
             {
                 if (validaFormulario())
                 {
-<<<<<<< HEAD
-                    Prestamo.agregar(new Prestamo(0,txt_fechaPrestamo.Text, txt_fechaDevolucion.Text, txt_fechaRealDevolucion.Text, txt_estadoPrestamo.Text));
-=======
+
                     Prestamo.agregar(new Prestamo(0, Convert.ToInt32(txt_idBibliotecario.Text), Convert.ToInt32(txt_idUsuario.Text), txt_fechaPrestamo.Text, txt_fechaDevolucion.Text, txt_fechaRealDevolucion.Text, txt_estadoPrestamo.Text));
->>>>>>> origin/master
+
                     Validaciones.limpiaTextbox(this);
                 }
             }

@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 namespace BibliotecaVirtual.clases
 {
-    class atraso
+    class Atraso
     {
         public static string tabla = "atraso";
         public static int factorPenalizacion = 5;
@@ -40,18 +40,25 @@ namespace BibliotecaVirtual.clases
             set { estado = value; }
         }
 
-  
+        private int idPrestamo;
 
-        public atraso(int id, string sancion, string estado)
+        public int IdPrestamo
         {
-            this.Id = id;
-            this.Sancion = sancion;
-            this.Estado = estado;
-          
-            
+            get { return idPrestamo; }
+            set { idPrestamo = value; }
         }
 
-        public atraso()
+  
+
+        public Atraso(int id, int idPrestamo, string sancion, string estado)
+        {
+            this.Id = id;
+            this.IdPrestamo = idPrestamo;
+            this.Sancion = sancion;
+            this.Estado = estado;
+        }
+
+        public Atraso()
         {
 
         }
@@ -77,28 +84,16 @@ namespace BibliotecaVirtual.clases
 
         }
 
-<<<<<<< HEAD
+
         // incio consultas sql
 
-        public static void agregar(atraso elAtraso)
+        public static void agregar(Atraso elAtraso)
         {
             Datos datos = new Datos();
-
-            string sql = "INSERT INTO atraso (id,sancion,estado) values('" + elAtraso.id + "','" + elAtraso.sancion + "','" + elAtraso.estado +"')";
+            string sql = "INSERT INTO " + tabla + " (id,idPrestamo,sancion,estado) VALUES('" + elAtraso.Id + "','" + elAtraso.IdPrestamo + "','" + elAtraso.sancion + "','" + elAtraso.estado + "')";
             datos.insertar(sql);
         }
-        public static Prestamo buscarPrestamo(string id)
-        {
 
-            Datos dato = new Datos();
-
-
-            string sql = "SELECT * from prestamo WHERE Id='" + id + "'";
-
-            Prestamo unPrestamo = dato.buscarPrestamo(sql);
-
-            return unPrestamo;
-        }
 
         public static DataTable listarAtraso()
         {
@@ -107,21 +102,21 @@ namespace BibliotecaVirtual.clases
             DataTable dataTable = new DataTable();
             dataTable = datos.consultaTabla(tabla);
             return dataTable;
-=======
+        }
+
         public static Atraso busca(string buscarID)
         {
-            string con = "select * from Cliente where id='" + buscarID +"'";
+            string con = "SELECT * FROM " + tabla + " WHERE id='" + buscarID + "'";
 
             Datos datos = new Datos();
 
             SqlDataReader row = datos.buscar(con);
 
-
-            var unAtraso = new Atraso((String)row["sancion"], (String)row["estado"]);
+            var unAtraso = new Atraso((int)row["id"], (int)row["idPrestamo"], (String)row["sancion"], (String)row["estado"]);
 
             return unAtraso;
 
->>>>>>> origin/master
+
         }
 
 

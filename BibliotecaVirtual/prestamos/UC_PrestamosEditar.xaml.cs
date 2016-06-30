@@ -82,7 +82,11 @@ namespace BibliotecaVirtual.prestamos
                 Prestamo unObjeto = Prestamo.buscar(Convert.ToInt32(txt_id.Text));
                 if (unObjeto != null)
                 {
-
+                    txt_id.IsEnabled = false;
+                    txt_fechaPrestamo.IsEnabled = false;
+                    txt_fechaDevolucion.IsEnabled = false;
+                    txt_fechaRealDevolucion.IsEnabled = true;
+                    txt_estadoPrestamo.IsEnabled = false;
                 }
                 else
                 {

@@ -25,7 +25,7 @@ namespace BibliotecaVirtual.prestamos
         {
             InitializeComponent();
 
-            dataGridlistarAtraso.DataContext = atraso.listarAtraso();
+            dataGridlistarAtraso.DataContext = Atraso.listarAtraso();
             dataGridlistarAtraso.IsEnabled = false;
            
          

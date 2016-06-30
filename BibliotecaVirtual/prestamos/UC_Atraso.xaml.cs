@@ -31,11 +31,15 @@ namespace BibliotecaVirtual.prestamos
 
             try
             {
-                int s = Convert.ToInt16(txt_id.Text);
-
-                atraso.agregar(new atraso(s,txt_Sancion.Text,txt_estado.Text));
-                   // atraso.agregar(new atraso(Convert.ToInt16(txt_id.Text),txt_Sancion.Text,txt_estado.Text));
+                if (txt_fechaRealDevolucion.Text != "") {
+                    Prestamo unPrestamo = new Prestamo(Convert.ToInt32(txt_id.Text), Convert.ToInt32(txt_idBibliotecario.Text), Convert.ToInt32(txt_idUsuario.Text), txt_fechaPrestamo.Text, txt_fechaDevolucion.Text, txt_fechaRealDevolucion.Text, txt_estadoPrestamo.Text);
+                    Atraso.agregar(new Atraso(0,Convert.ToInt32(txt_id.Text),txt_Sancion.Text,txt_estado.Text));
                     Validaciones.limpiaTextbox(this);
+                }
+                else
+                {
+                    MessageBox.Show("Debe ingresar la fecha de devolución");
+                }
                 
             }
             catch (Exception ex)
@@ -52,11 +56,13 @@ namespace BibliotecaVirtual.prestamos
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Datos datos = new Datos();
+            
             if (datos.existe(txt_id.Text) == true)
             {
                 Prestamo unPrestamo = Prestamo.buscar(Convert.ToInt16(txt_id.Text));
-
                 txt_id.Text = Convert.ToString(unPrestamo.Id);
+                txt_idBibliotecario.Text = Convert.ToString(unPrestamo.IdBibliotecario);
+                txt_idUsuario.Text = Convert.ToString(unPrestamo.IdUsuario);
                 txt_fechaPrestamo.Text = unPrestamo.FechaPrestamo;
                 txt_fechaDevolucion.Text = unPrestamo.FechaDevolucion;
                 txt_fechaRealDevolucion.Text = unPrestamo.FechaRealDevolucion;

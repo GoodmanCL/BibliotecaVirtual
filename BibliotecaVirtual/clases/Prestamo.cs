@@ -23,6 +23,21 @@ namespace BibliotecaVirtual.clases
             set { id = value; }
         }
 
+        private int idBibliotecario;
+
+        public int IdBibliotecario
+        {
+            get { return idBibliotecario; }
+            set { idBibliotecario = value; }
+        }
+
+        private int idUsuario;
+
+        public int IdUsuario
+        {
+            get { return idUsuario; }
+            set { idUsuario = value; }
+        }
         
         private string fechaPrestamo;     
 
@@ -59,9 +74,11 @@ namespace BibliotecaVirtual.clases
         }
 
 
-        public Prestamo(int id, string fechaPrestamo, string fechaDevolucion, string fechaRealDevolucion, string estadoPrestamo)  //constructor de clase prestamo
+        public Prestamo(int id, int idBibliotecario, int idUsuario, string fechaPrestamo, string fechaDevolucion, string fechaRealDevolucion, string estadoPrestamo)  //constructor de clase prestamo
         {
             this.Id = id;
+            this.IdBibliotecario = idBibliotecario;
+            this.IdUsuario = idUsuario;
             this.FechaPrestamo = fechaPrestamo;
             this.FechaDevolucion = fechaDevolucion;
             this.FechaRealDevolucion = fechaRealDevolucion;
@@ -92,11 +109,9 @@ namespace BibliotecaVirtual.clases
                 return null;
             }
 
-<<<<<<< HEAD
-            var unPrestamo = new Prestamo((int)row["id"],(String)row["fechaPrestamo"], (String)row["fechaDevolucion"], (String)row["fechaRealDevolucion"], (String)row["estadoPrestamo"]);
-=======
-            var unPrestamo = new Prestamo( (int)row["idBibliotecario"], (int)row ["idUsuario"], (int)row["id"], (String)row["fechaPrestamo"], (String)row["fechaDevolucion"], (String)row["fechaRealDevolucion"], (String)row["estadoPrestamo"]);
->>>>>>> origin/master
+
+            var unPrestamo = new Prestamo((int)row["id"],(int)row["idBibliotecario"],(int)row["idUsuario"],(String)row["fechaPrestamo"], (String)row["fechaDevolucion"], (String)row["fechaRealDevolucion"], (String)row["estadoPrestamo"]);
+
             datos.cn.Close();
             return unPrestamo;
 

@@ -8,22 +8,26 @@
         <GroupBox Header="Atraso" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="395" Width="570">
             <Canvas HorizontalAlignment="Left" Height="355" Margin="10,10,0,0" VerticalAlignment="Top" Width="533">
                 <Label Content="Busqueda ID Prestamo:" Canvas.Left="10" Canvas.Top="10"/>
-                <TextBox x:Name="txt_id" Height="23" Canvas.Left="143" TextWrapping="Wrap" Canvas.Top="13" Width="210"/>
+                <TextBox x:Name="txt_id" Height="23" Canvas.Left="148" TextWrapping="Wrap" Canvas.Top="13" Width="205"/>
                 <Button x:Name="btn_buscar" Content="Buscar" Canvas.Left="383" Canvas.Top="16" Width="75" Click="Button_Click"/>
-                <Label Content="Fecha Préstamo:" Canvas.Left="10" Canvas.Top="41"/>
-                <Label Content="Fecha Devolución:" Canvas.Left="10" Canvas.Top="67" Width="110"/>
-                <Label Content="Fecha Real Devolución:" Canvas.Left="10" Canvas.Top="98" Width="133"/>
-                <Label Content="Estado Préstamo :" Canvas.Left="10" Canvas.Top="129" Width="133"/>
-                <TextBlock x:Name="txt_fechaPrestamo" Canvas.Left="148" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="41" Width="210" Height="21"/>
-                <TextBlock x:Name="txt_fechaDevolucion" Canvas.Left="148" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="67" Height="21" Width="210"/>
-                <TextBlock x:Name="txt_fechaRealDevolucion" Canvas.Left="148" TextWrapping="Wrap" Text="TextBlock" Canvas.Top="98" Width="205" Height="26"/>
-                <Label Content="Sanción :" Canvas.Left="10" Canvas.Top="155" Width="110"/>
-                <TextBox x:Name="txt_Sancion" Height="23" Canvas.Left="148" TextWrapping="Wrap" Canvas.Top="158" Width="205"/>
-                <Label Content="Estado (Observación):&#xD;&#xA;máximo 300 caracteres" Canvas.Left="10" Canvas.Top="181"/>
-                <TextBox x:Name="txt_estadoPrestamo" Height="26" Canvas.Left="148" TextWrapping="Wrap" Canvas.Top="124" Width="205"/>
+                <Label Content="Fecha Préstamo:" Canvas.Left="10" Canvas.Top="98"/>
+                <Label Content="Fecha Devolución:" Canvas.Left="10" Canvas.Top="128" Width="110"/>
+                <Label Content="Fecha Real Devolución:" Canvas.Left="10" Canvas.Top="159" Width="133"/>
+                <Label Content="Estado Préstamo :" Canvas.Left="10" Canvas.Top="190" Width="133"/>
+                <Label Content="Sanción :" Canvas.Left="10" Canvas.Top="216" Width="110"/>
+                <TextBox x:Name="txt_Sancion" Height="23" Canvas.Left="148" TextWrapping="Wrap" Canvas.Top="219" Width="205"/>
+                <Label Content="Estado (Observación):&#xD;&#xA;máximo 300 caracteres" Canvas.Left="10" Canvas.Top="242"/>
+                <TextBox x:Name="txt_estadoPrestamo" Height="26" Canvas.Left="148" TextWrapping="Wrap" Canvas.Top="185" Width="205"/>
                 <Button x:Name="btn_guardad" Content="Guardar" Canvas.Left="422" Canvas.Top="321" Width="75" Click="btn_guardad_Click"/>
                 <Button x:Name="btn_cancelar" Content="Cancelar" Canvas.Left="283" Canvas.Top="321" Width="75" Click="btn_cancelar_Click_1"/>
-                <TextBox x:Name="txt_estado" Height="22" Canvas.Left="148" TextWrapping="Wrap" Canvas.Top="201" Width="205"/>
+                <TextBox x:Name="txt_estado" Height="22" Canvas.Left="148" TextWrapping="Wrap" Canvas.Top="262" Width="205"/>
+                <Label Content="Usuario:" Canvas.Left="10" Canvas.Top="41"/>
+                <Label Content="Bibliotecario" Canvas.Left="10" Canvas.Top="69"/>
+                <TextBox x:Name="txt_fechaRealDevolucion" Height="26" Canvas.Left="148" TextWrapping="Wrap" Canvas.Top="155" Width="205"/>
+                <TextBox x:Name="txt_idUsuario" Height="26" Canvas.Left="148" TextWrapping="Wrap" Canvas.Top="39" Width="205" IsEnabled="False"/>
+                <TextBox x:Name="txt_idBibliotecario" Height="26" Canvas.Left="148" TextWrapping="Wrap" Canvas.Top="67" Width="205" IsEnabled="False"/>
+                <TextBox x:Name="txt_fechaPrestamo" Height="26" Canvas.Left="148" TextWrapping="Wrap" Canvas.Top="95" Width="205" IsEnabled="False"/>
+                <TextBox x:Name="txt_fechaDevolucion" Height="26" Canvas.Left="148" TextWrapping="Wrap" Canvas.Top="125" Width="205" IsEnabled="False"/>
             </Canvas>
         </GroupBox>
 
