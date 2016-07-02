@@ -83,6 +83,9 @@
     <Compile Include="prestamos\UC_listarAtraso.xaml.cs">
       <DependentUpon>UC_listarAtraso.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\reporteAtrasoUsuario.xaml.cs">
+      <DependentUpon>reporteAtrasoUsuario.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\ReportePrincipal.xaml.cs">
       <DependentUpon>ReportePrincipal.xaml</DependentUpon>
     </Compile>
@@ -142,6 +145,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Reportes\reporteAtrasoUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Reportes\ReportePrincipal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

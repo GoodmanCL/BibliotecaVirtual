@@ -100,6 +100,16 @@ namespace BibliotecaVirtual.clases
 
 
 
+
+
+
+
+
+
+
+
+
+
         public SqlDataReader buscar(String sql)
         {
             cn.Open();
