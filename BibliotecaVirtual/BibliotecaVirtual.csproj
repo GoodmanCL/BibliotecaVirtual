@@ -83,6 +83,9 @@
     <Compile Include="prestamos\UC_listarAtraso.xaml.cs">
       <DependentUpon>UC_listarAtraso.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\ReportePrincipal.xaml.cs">
+      <DependentUpon>ReportePrincipal.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UC_Prestamos.xaml.cs">
       <DependentUpon>UC_Prestamos.xaml</DependentUpon>
     </Compile>
@@ -139,6 +142,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Reportes\ReportePrincipal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UC_Prestamos.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
