@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BibliotecaVirtual.clases;
 
 namespace BibliotecaVirtual
 {
@@ -23,6 +24,11 @@ namespace BibliotecaVirtual
         public MainWindow()
         {
             InitializeComponent();
+
+            int diferencia = Validaciones.diferenciaDias("2016-07-02", "");
+        
+
+            System.Windows.MessageBox.Show(Convert.ToString(diferencia));
         }
 
         private void Prestamos_Click(object sender, RoutedEventArgs e)

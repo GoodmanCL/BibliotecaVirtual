@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using BibliotecaVirtual.clases;
 
 namespace BibliotecaVirtual.clases
 {
@@ -55,13 +56,36 @@ namespace BibliotecaVirtual.clases
             return validacion;
         }
 
+        //  Este Metodo captura una fecha inicial la que le pasa el usuario y la compara con la fecha actual
+        //  luego a la fecha actual le resta la ingresada y saca la diferencia de dias entre ambos y la
+        //  devuelve en un int.
 
         public static int diferenciaDias(String fechaInicial, String fechaFinal)
         {
 
-            return 4;
+            DateTime diasingresados = Convert.ToDateTime(fechaInicial);
+            DateTime newDate = DateTime.Now;
+
+            // Difference in days, hours, and minutes.
+            TimeSpan ts = newDate - diasingresados;
+
+            // Difference in days.
+            int dias = ts.Days;
+
+            return dias;
+
         }
-            
+
+        // Este metodo resive la fecha inicial y le suma los dias que fueron guardados en el metodo
+        // de diferenciaDias.
+
+        public static DateTime Fechas_entrega(string fechaInicial, int diferenciaDias){
+           
+
+            DateTime fecha = Convert.ToDateTime(fechaInicial).AddDays(diferenciaDias);
+
+            return fecha;
+        }
 
 
     
